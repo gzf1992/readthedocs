@@ -1,0 +1,763 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>api module &#8212; mysim v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'v1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-api">
+<span id="api-module"></span><h1>api module<a class="headerlink" href="#module-api" title="Permalink to this headline">¶</a></h1>
+<p>Provides basic wrapping of order and logging functions
+along with enum definitions</p>
+<dl class="class">
+<dt id="api.Currency">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">Currency</code><a class="headerlink" href="#api.Currency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Short name for currencies.</p>
+<dl class="attribute">
+<dt id="api.Currency.AUD">
+<code class="descname">AUD</code><em class="property"> = 'AUD'</em><a class="headerlink" href="#api.Currency.AUD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.BRL">
+<code class="descname">BRL</code><em class="property"> = 'BRL'</em><a class="headerlink" href="#api.Currency.BRL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.CAD">
+<code class="descname">CAD</code><em class="property"> = 'CAD'</em><a class="headerlink" href="#api.Currency.CAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.CNH">
+<code class="descname">CNH</code><em class="property"> = 'CNH'</em><a class="headerlink" href="#api.Currency.CNH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.CNY">
+<code class="descname">CNY</code><em class="property"> = 'CNY'</em><a class="headerlink" href="#api.Currency.CNY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.EUR">
+<code class="descname">EUR</code><em class="property"> = 'EUR'</em><a class="headerlink" href="#api.Currency.EUR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.GBP">
+<code class="descname">GBP</code><em class="property"> = 'GBP'</em><a class="headerlink" href="#api.Currency.GBP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.HKD">
+<code class="descname">HKD</code><em class="property"> = 'HKD'</em><a class="headerlink" href="#api.Currency.HKD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.INR">
+<code class="descname">INR</code><em class="property"> = 'INR'</em><a class="headerlink" href="#api.Currency.INR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.JPY">
+<code class="descname">JPY</code><em class="property"> = 'JPY'</em><a class="headerlink" href="#api.Currency.JPY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.KRW">
+<code class="descname">KRW</code><em class="property"> = 'KRW'</em><a class="headerlink" href="#api.Currency.KRW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.MXN">
+<code class="descname">MXN</code><em class="property"> = 'MXN'</em><a class="headerlink" href="#api.Currency.MXN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.NOK">
+<code class="descname">NOK</code><em class="property"> = 'NOK'</em><a class="headerlink" href="#api.Currency.NOK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.NZD">
+<code class="descname">NZD</code><em class="property"> = 'NZD'</em><a class="headerlink" href="#api.Currency.NZD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.RUB">
+<code class="descname">RUB</code><em class="property"> = 'RUB'</em><a class="headerlink" href="#api.Currency.RUB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.SEK">
+<code class="descname">SEK</code><em class="property"> = 'SEK'</em><a class="headerlink" href="#api.Currency.SEK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.SGD">
+<code class="descname">SGD</code><em class="property"> = 'SGD'</em><a class="headerlink" href="#api.Currency.SGD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.TRY">
+<code class="descname">TRY</code><em class="property"> = 'TRY'</em><a class="headerlink" href="#api.Currency.TRY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.USD">
+<code class="descname">USD</code><em class="property"> = 'USD'</em><a class="headerlink" href="#api.Currency.USD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Currency.ZAR">
+<code class="descname">ZAR</code><em class="property"> = 'ZAR'</em><a class="headerlink" href="#api.Currency.ZAR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.Direction">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">Direction</code><a class="headerlink" href="#api.Direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.IntEnum</span></code></p>
+<p>buy, sell, cancel</p>
+<dl class="attribute">
+<dt id="api.Direction.BUY">
+<code class="descname">BUY</code><em class="property"> = 0</em><a class="headerlink" href="#api.Direction.BUY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Direction.CANCEL">
+<code class="descname">CANCEL</code><em class="property"> = 2</em><a class="headerlink" href="#api.Direction.CANCEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Direction.SELL">
+<code class="descname">SELL</code><em class="property"> = 1</em><a class="headerlink" href="#api.Direction.SELL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.Exchange">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">Exchange</code><span class="sig-paren">(</span><em>short_name</em>, <em>full_name</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Exchange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>1-to-1 mapping of single letter to full name of
+exchanges.</p>
+<dl class="attribute">
+<dt id="api.Exchange.CBOT">
+<code class="descname">CBOT</code><em class="property"> = ('F', 'CBOT')</em><a class="headerlink" href="#api.Exchange.CBOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.CFFEX">
+<code class="descname">CFFEX</code><em class="property"> = ('G', 'CFFEX')</em><a class="headerlink" href="#api.Exchange.CFFEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.CME">
+<code class="descname">CME</code><em class="property"> = ('M', 'CME')</em><a class="headerlink" href="#api.Exchange.CME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.COMEX">
+<code class="descname">COMEX</code><em class="property"> = ('O', 'COMEX')</em><a class="headerlink" href="#api.Exchange.COMEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.CZCE">
+<code class="descname">CZCE</code><em class="property"> = ('C', 'CZCE')</em><a class="headerlink" href="#api.Exchange.CZCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.DCE">
+<code class="descname">DCE</code><em class="property"> = ('B', 'DCE')</em><a class="headerlink" href="#api.Exchange.DCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.HKEX">
+<code class="descname">HKEX</code><em class="property"> = ('2', 'HKEX')</em><a class="headerlink" href="#api.Exchange.HKEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.LME">
+<code class="descname">LME</code><em class="property"> = ('L', 'LME')</em><a class="headerlink" href="#api.Exchange.LME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.NYMEX">
+<code class="descname">NYMEX</code><em class="property"> = ('N', 'NYMEX')</em><a class="headerlink" href="#api.Exchange.NYMEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.SGE">
+<code class="descname">SGE</code><em class="property"> = ('D', 'SGE')</em><a class="headerlink" href="#api.Exchange.SGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.SGX">
+<code class="descname">SGX</code><em class="property"> = ('S', 'SGX')</em><a class="headerlink" href="#api.Exchange.SGX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.SHFE">
+<code class="descname">SHFE</code><em class="property"> = ('A', 'SHFE')</em><a class="headerlink" href="#api.Exchange.SHFE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.SSE">
+<code class="descname">SSE</code><em class="property"> = ('1', 'SSE')</em><a class="headerlink" href="#api.Exchange.SSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.SZSE">
+<code class="descname">SZSE</code><em class="property"> = ('0', 'SZSE')</em><a class="headerlink" href="#api.Exchange.SZSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.full_name">
+<code class="descname">full_name</code><a class="headerlink" href="#api.Exchange.full_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>return exchange as full string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="api.Exchange.short_name">
+<code class="descname">short_name</code><a class="headerlink" href="#api.Exchange.short_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>return exchange as numeric value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.InvestorType">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">InvestorType</code><a class="headerlink" href="#api.InvestorType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.IntEnum</span></code></p>
+<p>type of investment</p>
+<dl class="attribute">
+<dt id="api.InvestorType.ARBITRAGEURS">
+<code class="descname">ARBITRAGEURS</code><em class="property"> = 2</em><a class="headerlink" href="#api.InvestorType.ARBITRAGEURS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.InvestorType.HEDGER">
+<code class="descname">HEDGER</code><em class="property"> = 1</em><a class="headerlink" href="#api.InvestorType.HEDGER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.InvestorType.SPECULATOR">
+<code class="descname">SPECULATOR</code><em class="property"> = 0</em><a class="headerlink" href="#api.InvestorType.SPECULATOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.Logger">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>context</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A helper class providing basic log formatting and send
+through to trader.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>context</strong></td>
+<td>(<code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code>) Save context object for sending order.</td>
+</tr>
+<tr class="row-even"><td><strong>st_name</strong></td>
+<td>(str) name of strategy</td>
+</tr>
+<tr class="row-odd"><td><strong>st_id</strong></td>
+<td>(int) id of strategy</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="api.Logger.err">
+<code class="descname">err</code><span class="sig-paren">(</span><em>contents</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Logger.err" title="Permalink to this definition">¶</a></dt>
+<dd><p>logging with severity <cite>error</cite>
+Parameters
+———-
+contents : str</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Logger</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Logger.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>contents</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Logger.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>logging with severity <cite>info</cite>
+Parameters
+———-
+contents : str</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Logger.warn">
+<code class="descname">warn</code><span class="sig-paren">(</span><em>contents</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Logger.warn" title="Permalink to this definition">¶</a></dt>
+<dd><p>logging with severity <cite>warning</cite>
+Parameters
+———-
+contents : str</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.OpenClose">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">OpenClose</code><a class="headerlink" href="#api.OpenClose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.IntEnum</span></code></p>
+<p>open, close, close yesterday</p>
+<dl class="attribute">
+<dt id="api.OpenClose.CLOSE">
+<code class="descname">CLOSE</code><em class="property"> = 1</em><a class="headerlink" href="#api.OpenClose.CLOSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.OpenClose.CLOSE_TOD">
+<code class="descname">CLOSE_TOD</code><em class="property"> = 2</em><a class="headerlink" href="#api.OpenClose.CLOSE_TOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.OpenClose.CLOSE_YES">
+<code class="descname">CLOSE_YES</code><em class="property"> = 3</em><a class="headerlink" href="#api.OpenClose.CLOSE_YES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.OpenClose.OPEN">
+<code class="descname">OPEN</code><em class="property"> = 0</em><a class="headerlink" href="#api.OpenClose.OPEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.Order">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">Order</code><span class="sig-paren">(</span><em>context</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A wrapper class providing simpler interface for sending orders</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>context</strong></td>
+<td>(<code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code>) Save context object for sending order.</td>
+</tr>
+<tr class="row-even"><td><strong>order_dict</strong></td>
+<td>(dict) order dictionary</td>
+</tr>
+<tr class="row-odd"><td><strong>contracts</strong></td>
+<td>(dictionary) detailed information for each contract</td>
+</tr>
+<tr class="row-even"><td><strong>st_id</strong></td>
+<td>(int) strategy id</td>
+</tr>
+<tr class="row-odd"><td><strong>st_name</strong></td>
+<td>(str) name of strategy</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="api.Order.cancel_single_order">
+<code class="descname">cancel_single_order</code><span class="sig-paren">(</span><em>order_id</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order.cancel_single_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancel single order with given id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>order_id</strong> : int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>cancel order id</strong> : int</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="o">.</span><span class="n">cancel_single_order</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Order.send_orders_target_pos">
+<code class="descname">send_orders_target_pos</code><span class="sig-paren">(</span><em>symbol</em>, <em>direction</em>, <em>target_size</em>, <em>price</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order.send_orders_target_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send orders to achieve a target position via <code class="xref py py-obj docutils literal"><span class="pre">SmartExecution</span></code> module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>symbol</strong> : string</p>
+<blockquote>
+<div><p>ticker name, e.g. ‘m1601’</p>
+</div></blockquote>
+<p><strong>direction: Direction</strong></p>
+<blockquote>
+<div><p>buy or sell</p>
+</div></blockquote>
+<p><strong>target_size: integer</strong></p>
+<blockquote>
+<div><p>target lot size</p>
+</div></blockquote>
+<p><strong>price</strong> : float</p>
+<blockquote>
+<div><p>order price</p>
+</div></blockquote>
+<p><strong>args</strong></p>
+<blockquote>
+<div><p>Variable length argument list.</p>
+</div></blockquote>
+<p><strong>kwargs</strong></p>
+<blockquote>
+<div><p>Arbitrary keyword arguments.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">order status: integer</p>
+<blockquote>
+<div><p>0 for success, else failure.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>sync_cancel</strong> : int</p>
+<blockquote class="last">
+<div><p>0 for synchronization, -1 for asynchronization.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="o">.</span><span class="n">send_orders_target_pos</span><span class="p">(</span><span class="s1">&#39;m1601&#39;</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">123.456</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Order.send_orders_twap">
+<code class="descname">send_orders_twap</code><span class="sig-paren">(</span><em>symbol</em>, <em>size</em>, <em>direction</em>, <em>acceptable_price</em>, <em>a_start_time</em>, <em>a_end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order.send_orders_twap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send twap orders through <code class="xref py py-obj docutils literal"><span class="pre">SmartExecution</span></code> module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>symbol</strong> : str</p>
+<blockquote>
+<div><p>contract symbol, e.g. “600001”</p>
+</div></blockquote>
+<p><strong>size</strong> : int</p>
+<blockquote>
+<div><p>total size of order, e.g. 10000</p>
+</div></blockquote>
+<p><strong>side</strong> : Direction</p>
+<blockquote>
+<div><p>buy or sell, e.g. Direction.BUY</p>
+</div></blockquote>
+<p><strong>acceptable_price</strong> : float</p>
+<blockquote>
+<div><p>worst acceptable price, e.g. 123.456</p>
+</div></blockquote>
+<p><strong>a_start_time</strong> : int</p>
+<blockquote>
+<div><p>start time of twap, e.g. 93000000</p>
+</div></blockquote>
+<p><strong>a_end_time</strong> : int</p>
+<blockquote>
+<div><p>end time of twap, e.g. 150000000</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>order status</strong> : int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="o">.</span><span class="n">send_orders_twap</span><span class="p">(</span><span class="s2">&quot;600001&quot;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">93000000</span><span class="p">,</span> <span class="mi">150000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Order.send_orders_vwap">
+<code class="descname">send_orders_vwap</code><span class="sig-paren">(</span><em>symbol</em>, <em>size</em>, <em>side</em>, <em>acceptable_price</em>, <em>a_start_time</em>, <em>a_end_time</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order.send_orders_vwap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send vwap orders through <code class="xref py py-obj docutils literal"><span class="pre">SmartExecution</span></code> module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>symbol</strong> : str</p>
+<blockquote>
+<div><p>contract symbol, e.g. “600001”</p>
+</div></blockquote>
+<p><strong>size</strong> : int</p>
+<blockquote>
+<div><p>total size of order, e.g. 10000</p>
+</div></blockquote>
+<p><strong>side</strong> : Direction</p>
+<blockquote>
+<div><p>buy or sell, e.g. Direction.BUY</p>
+</div></blockquote>
+<p><strong>acceptable_price</strong> : float</p>
+<blockquote>
+<div><p>worst acceptable price, e.g. 123.456</p>
+</div></blockquote>
+<p><strong>a_start_time</strong> : int</p>
+<blockquote>
+<div><p>start time of vwap, e.g. 93000000</p>
+</div></blockquote>
+<p><strong>a_end_time</strong> : int</p>
+<blockquote>
+<div><p>end time of vwap, e.g. 150000000</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>order status</strong> : int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="o">.</span><span class="n">send_orders_vwap</span><span class="p">(</span><span class="s2">&quot;600001&quot;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">93000000</span><span class="p">,</span> <span class="mi">150000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="api.Order.send_single_order">
+<code class="descname">send_single_order</code><span class="sig-paren">(</span><em>symbol</em>, <em>price</em>, <em>size</em>, <em>direction</em>, <em>open_close</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#api.Order.send_single_order" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>symbol</strong> : str</p>
+<blockquote>
+<div><p>ticker name</p>
+</div></blockquote>
+<p><strong>price</strong> : float</p>
+<blockquote>
+<div><p>limit price</p>
+</div></blockquote>
+<p><strong>size</strong> : int</p>
+<blockquote>
+<div><p>lot size</p>
+</div></blockquote>
+<p><strong>direction: Direction</strong></p>
+<blockquote>
+<div><p>buy or sell.</p>
+</div></blockquote>
+<p><strong>open_close: OpenClose</strong></p>
+<blockquote>
+<div><p>open or close.</p>
+</div></blockquote>
+<p><strong>args</strong></p>
+<blockquote>
+<div><p>Variable length argument list.</p>
+</div></blockquote>
+<p><strong>kwargs</strong></p>
+<blockquote>
+<div><p>Arbitrary keyword arguments.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>order id</strong> : int</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>investor_type</strong> : InvestorType</p>
+<blockquote>
+<div><p>type of investment</p>
+</div></blockquote>
+<p><strong>order_type</strong> : OrderType</p>
+<blockquote>
+<div><p>type of order</p>
+</div></blockquote>
+<p><strong>time_in_force</strong> : TIF</p>
+<blockquote class="last">
+<div><p>style of order</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Order</span><span class="o">.</span><span class="n">send_single_order</span><span class="p">(</span><span class="s1">&#39;m1701&#39;</span><span class="p">,</span> <span class="mf">123.456</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">BUY</span><span class="p">,</span> <span class="n">OpenClose</span><span class="o">.</span><span class="n">OPEN</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.OrderType">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">OrderType</code><a class="headerlink" href="#api.OrderType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.IntEnum</span></code></p>
+<p>type of order</p>
+<dl class="attribute">
+<dt id="api.OrderType.LIMIT">
+<code class="descname">LIMIT</code><em class="property"> = 0</em><a class="headerlink" href="#api.OrderType.LIMIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.OrderType.MARKET">
+<code class="descname">MARKET</code><em class="property"> = 1</em><a class="headerlink" href="#api.OrderType.MARKET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.OrderType.STOP">
+<code class="descname">STOP</code><em class="property"> = 2</em><a class="headerlink" href="#api.OrderType.STOP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="api.TIF">
+<em class="property">class </em><code class="descclassname">api.</code><code class="descname">TIF</code><a class="headerlink" href="#api.TIF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.IntEnum</span></code></p>
+<p>order style</p>
+<dl class="attribute">
+<dt id="api.TIF.DAY">
+<code class="descname">DAY</code><em class="property"> = 0</em><a class="headerlink" href="#api.TIF.DAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.TIF.FAK">
+<code class="descname">FAK</code><em class="property"> = 1</em><a class="headerlink" href="#api.TIF.FAK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.TIF.FOK">
+<code class="descname">FOK</code><em class="property"> = 2</em><a class="headerlink" href="#api.TIF.FOK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.TIF.GTC">
+<code class="descname">GTC</code><em class="property"> = 4</em><a class="headerlink" href="#api.TIF.GTC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.TIF.GTD">
+<code class="descname">GTD</code><em class="property"> = 3</em><a class="headerlink" href="#api.TIF.GTD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="api.TIF.IOC">
+<code class="descname">IOC</code><em class="property"> = 1</em><a class="headerlink" href="#api.TIF.IOC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="api.exchange_map">
+<code class="descclassname">api.</code><code class="descname">exchange_map</code><span class="sig-paren">(</span><em>short_name</em><span class="sig-paren">)</span><a class="headerlink" href="#api.exchange_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert exchange from numeric value to full string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>short_name: int</strong></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>long_name</strong> : str</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exchange_map</span><span class="p">(</span><span class="mi">65</span><span class="p">)</span>
+<span class="go">&#39;CZCE&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, MYCAPITAL.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,290 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>st module &#8212; mysim v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'v1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-st">
+<span id="st-module"></span><h1>st module<a class="headerlink" href="#module-st" title="Permalink to this headline">¶</a></h1>
+<p>This is a minimal working version of sample strategy
+Current version: v1.0.0
+Author: MY CAPITAL</p>
+<dl class="function">
+<dt id="st.main">
+<code class="descclassname">st.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#st.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main Entrance for local simulation, a simple local simulation loop will
+be run to verify logic of underlying strategy. It first initialize the
+simulation settings, then calls the simulation task.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st1</span> <span class="o">=</span> <span class="n">StratConfig</span><span class="o">.</span><span class="n">StratItem</span><span class="p">(</span><span class="s2">&quot;sample_strat&quot;</span><span class="p">,</span> <span class="n">stratid</span><span class="o">=</span><span class="mi">888</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Construct a <code class="xref py py-obj docutils literal"><span class="pre">StratConfig.StratItem</span></code> instance with
+name sample_strat and id 888.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st1</span><span class="o">.</span><span class="n">contracts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;sr|R1|CZCE|7|20|0|Account1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>“Name|Rank(R1/R2)|Exchange|FeedType|Maxpos(per order)|Account”</em></p>
+<p>Subscribe contracts as specified by the formatted string.
+For multiple contracts, simply append more formatted string to the list.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st1</span><span class="o">.</span><span class="n">accounts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Account1|999999.99|888888.88|CNY|1.0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>“Name|Available Cash|Asset Cash|Currency|Exchange Rate”</em></p>
+<p>Similar to contracts subscription, simply append account to list.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">st1</span><span class="o">.</span><span class="n">output_file_path</span> <span class="o">=</span> <span class="s2">&quot;config/&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">st1</span><span class="o">.</span><span class="n">strat_param_file</span> <span class="o">=</span> <span class="s2">&quot;config/strat_param.txt&quot;</span>
+</pre></div>
+</div>
+<p><cite>output_file_path</cite> corresponds to a directory available for user to write into.
+<cite>strat_param_file</cite> is an external parameter file that a strategy might read from.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span> <span class="o">=</span> <span class="n">StratConfig</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Initialize a <code class="xref py py-obj docutils literal"><span class="pre">StratConfig.StratItem</span></code> instance</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">strat_item</span> <span class="o">=</span> <span class="n">st1</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Fill config with strategy.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="mi">20170901</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="mi">20170910</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">begin_time</span> <span class="o">=</span> <span class="mi">85800000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">end_time</span> <span class="o">=</span> <span class="mi">273000000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">day_night_flag</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Simulation date time configuration.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfg1</span><span class="o">.</span><span class="n">time_interval</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Specifies the time interval between each <cite>on_timer</cite>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">execute_task</span><span class="p">(</span><span class="n">cfg1</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Start task execution</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="st.on_book">
+<code class="descclassname">st.</code><code class="descname">on_book</code><span class="sig-paren">(</span><em>context</em>, <em>quote_type</em>, <em>quote</em><span class="sig-paren">)</span><a class="headerlink" href="#st.on_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receiving tick data and do computations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>context</strong> : <code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code></p>
+<blockquote>
+<div><p>An empty global object for users to carry variables
+across functions. Use of global variables is not
+recommended.</p>
+</div></blockquote>
+<p><strong>quote_type</strong> : {0, 1}</p>
+<blockquote>
+<div><p>0 for future or spot data, 1 for stock data.</p>
+</div></blockquote>
+<p><strong>quote</strong> : <code class="xref py py-obj docutils literal"><span class="pre">sdptypes.book</span></code></p>
+<blockquote class="last">
+<div><p>Quote data structure.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="st.on_day_finish">
+<code class="descclassname">st.</code><code class="descname">on_day_finish</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#st.on_day_finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call at the end of each trading session, clear all variables</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>context</strong> : <code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code></p>
+<blockquote class="last">
+<div><p>An empty global object for users to carry variables
+across functions. Use of global variables is not
+recommended.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="st.on_init">
+<code class="descclassname">st.</code><code class="descname">on_init</code><span class="sig-paren">(</span><em>context</em>, <em>config_type</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#st.on_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start of trading session</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>context</strong> : <code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code></p>
+<blockquote>
+<div><p>An empty global object for users to carry variables
+across functions. Use of global variables is not
+recommended.</p>
+</div></blockquote>
+<p><strong>config_type</strong> : {0}</p>
+<blockquote>
+<div><p>0 for default configuration type</p>
+</div></blockquote>
+<p><strong>config: :obj:`sdptypes.config`</strong></p>
+<blockquote>
+<div><p>Strategy configuration structure.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : int</p>
+<blockquote class="last">
+<div><p>0 for success, -1 for failure.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="st.on_response">
+<code class="descclassname">st.</code><code class="descname">on_response</code><span class="sig-paren">(</span><em>context</em>, <em>response_type</em>, <em>response</em><span class="sig-paren">)</span><a class="headerlink" href="#st.on_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receiving information on trade results</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>context</strong> : <code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code></p>
+<blockquote>
+<div><p>An empty global object for users to carry variables
+across functions. Use of global variables is not
+recommended.</p>
+</div></blockquote>
+<p><strong>response_type: {0}</strong></p>
+<blockquote>
+<div><p>0 for default response type</p>
+</div></blockquote>
+<p><strong>response: :obj:`sdptypes.response`</strong></p>
+<blockquote class="last">
+<div><p>Response structure.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="st.on_timer">
+<code class="descclassname">st.</code><code class="descname">on_timer</code><span class="sig-paren">(</span><em>context</em>, <em>data_type</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#st.on_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Timer function with preset timer interval.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>context</strong> : <code class="xref py py-obj docutils literal"><span class="pre">StrategyWrapper.NoneObject</span></code></p>
+<blockquote>
+<div><p>An empty global object for users to carry variables
+across functions. Use of global variables is not
+recommended.</p>
+</div></blockquote>
+<p><strong>data_type: int</strong></p>
+<blockquote>
+<div><p>Currently not in use.</p>
+</div></blockquote>
+<p><strong>data</strong> : <code class="xref py py-obj docutils literal"><span class="pre">sdptypes.undefined</span></code></p>
+<blockquote class="last">
+<div><p>Customized data structure for future use.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="../py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, MYCAPITAL.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/sources/st.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

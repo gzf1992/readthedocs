@@ -1,0 +1,641 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>simu_win.components.data_factory package &#8212; mysim v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'v1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="simu-win-components-data-factory-package">
+<h1>simu_win.components.data_factory package<a class="headerlink" href="#simu-win-components-data-factory-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-simu_win.components.data_factory.business">
+<span id="simu-win-components-data-factory-business-module"></span><h2>simu_win.components.data_factory.business module<a class="headerlink" href="#module-simu_win.components.data_factory.business" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.byte_to_str">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">byte_to_str</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.byte_to_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.construct_settlement_position">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">construct_settlement_position</code><span class="sig-paren">(</span><em>st_id</em>, <em>date</em>, <em>day_night</em>, <em>account_info</em>, <em>pos_info</em>, <em>symbol_map</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.construct_settlement_position" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>{</dt>
+<dd><dl class="first docutils">
+<dt>‘920’: {</dt>
+<dd><p class="first">‘cash’ : 2650,              # 策略现金
+‘accumulated_pnl’: -65.56,  # 策略累计pnl
+‘daynight’:’DAY’,           # 日夜盘信息
+‘accounts’ : {              # 账号信息</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>‘41900045601’ <span class="classifier-delimiter">:</span> <span class="classifier">{</span></dt>
+<dd>‘account_accumulated_pnl’:-129.65,  # 账号累计pnl
+‘cash’ : 2650,                      # 账号现金
+‘daynight’:’DAY’                    # 日夜盘信息</dd>
+</dl>
+</div></blockquote>
+<p>},
+‘data’:{                     # 持仓信息</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>‘000776’: {              # symbol信息</dt>
+<dd>‘today_long_avg_price’ : 17.96 ,   # 今日多仓平均成本价
+‘today_short_avg_price’ : 0 ,      # 今日空仓平均成本价
+‘yest_long_avg_price’ : 16.69 ,    # 昨日多仓平均成本价
+‘yest_short_avg_price’ : 0 ,       #  昨日空仓平均成本价
+‘today_long_pos’: 100,             # 今日多仓仓位，股票单位：股，期货单位：手
+‘today_short_pos’:0,               # 今日空仓仓位，期货单位：手
+‘yest_long_pos’:100,               # 昨日多仓仓位，股票单位：股，期货单位：手
+‘yest_short_pos’:0,                # 昨日空仓仓位，期货单位：手
+‘account’:‘41900045602’,           # symbol对应账号
+‘today_settle_price’ : 17.21,      # 今日结算价
+‘exchange’: ‘SZSE’,                # 交易所
+‘daynight’:’DAY’,                  # 日夜盘信息
+‘symbol_net_pnl’:345.67            # symbol 当前交易日、当前日夜盘的pnl</dd>
+</dl>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.contains_future">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">contains_future</code><span class="sig-paren">(</span><em>contracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.contains_future" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if a list of contract contains future data
+:param contracts:
+:return:</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.convert_exchange_to_prefix">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">convert_exchange_to_prefix</code><span class="sig-paren">(</span><em>exch</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.convert_exchange_to_prefix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.convert_symbol_to_product">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">convert_symbol_to_product</code><span class="sig-paren">(</span><em>symbol</em>, <em>exch</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.convert_symbol_to_product" title="Permalink to this definition">¶</a></dt>
+<dd><p>internal product name should be lower case</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.convert_to_my_product">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">convert_to_my_product</code><span class="sig-paren">(</span><em>product</em>, <em>exch</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.convert_to_my_product" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.dict_set_default_data">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">dict_set_default_data</code><span class="sig-paren">(</span><em>dict_data</em>, <em>def_key_val</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.dict_set_default_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.exch_str_to_int">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">exch_str_to_int</code><span class="sig-paren">(</span><em>exch</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.exch_str_to_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_book_contract">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_book_contract</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>constracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_book_contract" title="Permalink to this definition">¶</a></dt>
+<dd><p>query the contract information and convert it to uniform format</p>
+<dl class="docutils">
+<dt>“contracts”: [</dt>
+<dd>“pp|R1|DCE|1,3|1|0|Account1”     # normal kind
+“SH50|I|TestAccount”,            # stock index item
+“600820||SSE|9|100|TestAccount”, # specified symbol directly
+“pp|R1|DCE|1,3|1|TestAccount”,   # product and rank
+“rb1701||SHFE|6|5|TestAccount”,  # with source</dd>
+</dl>
+<p>],</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_future_info">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_future_info</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>contracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_future_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>query fee information and init data</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_position">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_position</code><span class="sig-paren">(</span><em>strategy_item_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>format the initial position in task config</p>
+<dl class="docutils">
+<dt>“yesterday_pos”: [</dt>
+<dd>“rb1706|long_volume|long_price|short_volume|short_price”</dd>
+</dl>
+<p>]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_product_exch">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_product_exch</code><span class="sig-paren">(</span><em>symbol_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_product_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_stock_info">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_stock_info</code><span class="sig-paren">(</span><em>trade_day</em>, <em>day_night</em>, <em>symbol_info</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_stock_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.format_symbol_exch">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">format_symbol_exch</code><span class="sig-paren">(</span><em>symbol_cfg</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.format_symbol_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.get_currency">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">get_currency</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.get_currency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.get_exchange">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">get_exchange</code><span class="sig-paren">(</span><em>datadict</em>, <em>symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.get_exchange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.int_date_to_kdb_date">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">int_date_to_kdb_date</code><span class="sig-paren">(</span><em>int_date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.int_date_to_kdb_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.mi_type_convert">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">mi_type_convert</code><span class="sig-paren">(</span><em>mi_type_str</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.mi_type_convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.query_exch_by_symbol">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">query_exch_by_symbol</code><span class="sig-paren">(</span><em>symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.query_exch_by_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.remove_digits">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">remove_digits</code><span class="sig-paren">(</span><em>tstr</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.remove_digits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.remove_letters">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">remove_letters</code><span class="sig-paren">(</span><em>tstr</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.remove_letters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.reverse_to_product">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">reverse_to_product</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.reverse_to_product" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.to_day_night_str">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">to_day_night_str</code><span class="sig-paren">(</span><em>day_night</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.to_day_night_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.to_int_date">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">to_int_date</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.to_int_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.to_settlement_date">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">to_settlement_date</code><span class="sig-paren">(</span><em>int_date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.to_settlement_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.business.winds_code_to_code_exch">
+<code class="descclassname">simu_win.components.data_factory.business.</code><code class="descname">winds_code_to_code_exch</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.business.winds_code_to_code_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-simu_win.components.data_factory.data_loader">
+<span id="simu-win-components-data-factory-data-loader-module"></span><h2>simu_win.components.data_factory.data_loader module<a class="headerlink" href="#module-simu_win.components.data_factory.data_loader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">NpqDownloader</code><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p class="rubric">Attributes</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.bulk_contract_download">
+<code class="descname">bulk_contract_download</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.bulk_contract_download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.bulk_extra_download">
+<code class="descname">bulk_extra_download</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.bulk_extra_download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.bulk_quote_download">
+<code class="descname">bulk_quote_download</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>quote_def</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.bulk_quote_download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>path</em>, <em>tag_name</em>, <em>method=&lt;NpqMethod.REMOTE_WGETS: 1&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.local_copy">
+<code class="descname">local_copy</code><span class="sig-paren">(</span><em>path</em>, <em>tag_name</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.local_copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.npq_path_parser">
+<code class="descname">npq_path_parser</code><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.npq_path_parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_loader.NpqDownloader.remote_gets">
+<code class="descname">remote_gets</code><span class="sig-paren">(</span><em>path</em>, <em>tag_name</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqDownloader.remote_gets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="simu_win.components.data_factory.data_loader.NpqMethod">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">NpqMethod</code><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.data_loader.NpqMethod.LOCAL_COPY">
+<code class="descname">LOCAL_COPY</code><em class="property"> = 0</em><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqMethod.LOCAL_COPY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.data_loader.NpqMethod.REMOTE_WGETS">
+<code class="descname">REMOTE_WGETS</code><em class="property"> = 1</em><a class="headerlink" href="#simu_win.components.data_factory.data_loader.NpqMethod.REMOTE_WGETS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">TaskAnalysis</code><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.disassemble_task">
+<em class="property">static </em><code class="descname">disassemble_task</code><span class="sig-paren">(</span><em>task</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.disassemble_task" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">{‘date’: 20171010, ‘day_night’: 0, ‘quote_def’: [], ‘contracts’: []} iterator</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.gather_quote_contract">
+<em class="property">static </em><code class="descname">gather_quote_contract</code><span class="sig-paren">(</span><em>symbols</em>, <em>exches</em>, <em>mi_types</em>, <em>org_products</em>, <em>sources</em>, <em>accounts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.gather_quote_contract" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.mi_type_convert">
+<em class="property">static </em><code class="descname">mi_type_convert</code><span class="sig-paren">(</span><em>mi_type_str</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.mi_type_convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.parse_by_length">
+<em class="property">static </em><code class="descname">parse_by_length</code><span class="sig-paren">(</span><em>contr_list</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.parse_by_length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.parse_contracts">
+<em class="property">static </em><code class="descname">parse_contracts</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>contracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.parse_contracts" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>date</strong> – trade date</li>
+<li><strong>day_night</strong> – day night flag</li>
+<li><strong>contracts</strong> – the contract dictionary in task</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="simu_win.components.data_factory.data_loader.TaskAnalysis.winds_code_to_code_exch">
+<em class="property">static </em><code class="descname">winds_code_to_code_exch</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.TaskAnalysis.winds_code_to_code_exch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_loader.data_download">
+<code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">data_download</code><span class="sig-paren">(</span><em>task_json</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.data_download" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>task_json</strong> – normal task item</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">print download progress return True if success else return False</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_loader.download_query_constituent_stock">
+<code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">download_query_constituent_stock</code><span class="sig-paren">(</span><em>date</em>, <em>index_name</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.download_query_constituent_stock" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_loader.download_query_main_code">
+<code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">download_query_main_code</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>product</em>, <em>rank</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.download_query_main_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_loader.download_query_trade_date_range">
+<code class="descclassname">simu_win.components.data_factory.data_loader.</code><code class="descname">download_query_trade_date_range</code><span class="sig-paren">(</span><em>date_start</em>, <em>date_end</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_loader.download_query_trade_date_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-simu_win.components.data_factory.data_provider">
+<span id="simu-win-components-data-factory-data-provider-module"></span><h2>simu_win.components.data_factory.data_provider module<a class="headerlink" href="#module-simu_win.components.data_factory.data_provider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="simu_win.components.data_factory.data_provider.CommissionType">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.data_provider.</code><code class="descname">CommissionType</code><a class="headerlink" href="#simu_win.components.data_factory.data_provider.CommissionType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.data_provider.CommissionType.BY_MONEY">
+<code class="descname">BY_MONEY</code><em class="property"> = 1</em><a class="headerlink" href="#simu_win.components.data_factory.data_provider.CommissionType.BY_MONEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.data_provider.CommissionType.BY_VOLUME">
+<code class="descname">BY_VOLUME</code><em class="property"> = 0</em><a class="headerlink" href="#simu_win.components.data_factory.data_provider.CommissionType.BY_VOLUME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.data_provider.</code><code class="descname">DataLoader</code><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.deal_error">
+<code class="descname">deal_error</code><span class="sig-paren">(</span><em>type</em>, <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.deal_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.load_code">
+<code class="descname">load_code</code><span class="sig-paren">(</span><em>code</em>, <em>account</em>, <em>exch</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.load_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.load_contracts">
+<code class="descname">load_contracts</code><span class="sig-paren">(</span><em>contracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.load_contracts" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>contract</strong> – a list of contracts</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionary of contract information data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.load_currency">
+<code class="descname">load_currency</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.load_currency" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> – trading date</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">np.array of dtype=([(‘Currency’, ‘i4’), (‘Ratio’, ‘f8’)])</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.load_quote">
+<code class="descname">load_quote</code><span class="sig-paren">(</span><em>quote_def</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.load_quote" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>quote_def</strong> – [{‘mi_type’: 1, ‘source’: 0, ‘contract’: ‘rb1801’}] a list of quote define</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">merged quote data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.load_symbol">
+<code class="descname">load_symbol</code><span class="sig-paren">(</span><em>symbol</em>, <em>account</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.load_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="simu_win.components.data_factory.data_provider.DataLoader.set_trade_date">
+<code class="descname">set_trade_date</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.DataLoader.set_trade_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_provider.contract_info">
+<code class="descclassname">simu_win.components.data_factory.data_provider.</code><code class="descname">contract_info</code><span class="sig-paren">(</span><em>date</em>, <em>contracts</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.contract_info" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>date</strong> – then trading date</li>
+<li><strong>contract</strong> – the contract name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">return the symbol information item in previous normal result format</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.data_provider.data_produce">
+<code class="descclassname">simu_win.components.data_factory.data_provider.</code><code class="descname">data_produce</code><span class="sig-paren">(</span><em>task_json</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.data_provider.data_produce" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>task_json</strong> – normal task item</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a generator to fetch data like above format</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-simu_win.components.data_factory.quote_factory">
+<span id="simu-win-components-data-factory-quote-factory-module"></span><h2>simu_win.components.data_factory.quote_factory module<a class="headerlink" href="#module-simu_win.components.data_factory.quote_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="simu_win.components.data_factory.quote_factory.QuoteSortMethod">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">QuoteSortMethod</code><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.QuoteSortMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.quote_factory.QuoteSortMethod.BY_EXCHG_TIME">
+<code class="descname">BY_EXCHG_TIME</code><em class="property"> = 0</em><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.QuoteSortMethod.BY_EXCHG_TIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.quote_factory.QuoteSortMethod.BY_LOCAL_TIME">
+<code class="descname">BY_LOCAL_TIME</code><em class="property"> = 1</em><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.QuoteSortMethod.BY_LOCAL_TIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="simu_win.components.data_factory.quote_factory.TickNode">
+<em class="property">class </em><code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">TickNode</code><span class="sig-paren">(</span><em>value</em>, <em>bucket</em>, <em>tick</em>, <em>cmp_key</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.TickNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p class="rubric">Attributes</p>
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.quote_factory.TickNode.bucket_idx">
+<code class="descname">bucket_idx</code><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.TickNode.bucket_idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="simu_win.components.data_factory.quote_factory.TickNode.tick_idx">
+<code class="descname">tick_idx</code><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.TickNode.tick_idx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.quote_factory.convert_to_numpy">
+<code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">convert_to_numpy</code><span class="sig-paren">(</span><em>quote_list</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.convert_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.quote_factory.get_combined_quote">
+<code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">get_combined_quote</code><span class="sig-paren">(</span><em>date</em>, <em>day_night</em>, <em>quote_def</em>, <em>sort_method=&lt;QuoteSortMethod.BY_EXCHG_TIME: 0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.get_combined_quote" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#64;param date: 20171020
+&#64;param day_night: 1
+&#64;param quote_def: [{‘source’: 0, ‘code’: ‘rb1701’, ‘mi_type’: 101}]
+&#64;sort_method: 0</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.quote_factory.merge_quotes">
+<code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">merge_quotes</code><span class="sig-paren">(</span><em>quote_list</em>, <em>sort_method=&lt;QuoteSortMethod.BY_EXCHG_TIME: 0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.merge_quotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#64;param a list of predefined numpy quote</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.quote_factory.merge_two_quote">
+<code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">merge_two_quote</code><span class="sig-paren">(</span><em>q1</em>, <em>q2</em>, <em>sort_method=&lt;QuoteSortMethod.BY_EXCHG_TIME: 0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.merge_two_quote" title="Permalink to this definition">¶</a></dt>
+<dd><p>q1 is preference to sorted front
+&#64;param q1, q2: numpy.array type of quote</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="simu_win.components.data_factory.quote_factory.tree_merge_quotes">
+<code class="descclassname">simu_win.components.data_factory.quote_factory.</code><code class="descname">tree_merge_quotes</code><span class="sig-paren">(</span><em>quote_list</em>, <em>sort_method=&lt;QuoteSortMethod.BY_EXCHG_TIME: 0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#simu_win.components.data_factory.quote_factory.tree_merge_quotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#64;param a list of predefined numpy quote by loser tree merge sort method</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-simu_win.components.data_factory">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-simu_win.components.data_factory" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, MYCAPITAL.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/sources/simu_win.components.data_factory.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
